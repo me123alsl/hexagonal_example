@@ -1,0 +1,29 @@
+server:
+  port: 7070
+
+spring:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+        ddl-auto: create
+    show-sql: true
+    generate-ddl: true
+
+
+  logging:
+    level:
+      org.hibernate.SQL: debug
+      org.hibernate.type : trace
